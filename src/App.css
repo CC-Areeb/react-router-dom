@@ -25,18 +25,37 @@ body {
 }
 
 .home_page:hover {
-    color: #ff6666;
+    color: lightcoral;
 }
 
 .jobs {
     color: white;
 }
 
-#job_card {
+#job_card,
+.job_details {
     margin: 0px 20px;
     background: rgba(0, 0, 0, 0.2);
 }
 
+.main_job_box>a {
+    color: lightcoral;
+}
+
 .main_job_box>a:hover {
+    color: bisque;
+}
+
+.job_details {
+    padding: 30px 30px;
+}
+
+.back_to_home {
+    text-decoration: none;
+    color: lightcoral;
+}
+
+.back_to_home:hover {
+    text-decoration: none;
     color: bisque;
 }

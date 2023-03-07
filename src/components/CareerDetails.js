@@ -6,13 +6,15 @@ export default function CareerDetails() {
     const career = useLoaderData();
 
     return (
-        <div>
+        <div className='job_details rounded-4'>
             <h1>Career Details for {career.title}</h1>
             <p>Starting Salary {career.salary}</p>
             <p>Location {career.location}</p>
             
             <div>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus labore quaerat tempora eaque eligendi, porro, veritatis id officia laborum magnam possimus, accusantium error illo consequatur debitis animi perspiciatis autem eveniet asperiores vitae nihil similique alias. Autem animi modi ab et.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus labore quaerat tempora eaque eligendi,
+                porro, veritatis id officia laborum magnam possimus, accusantium error illo consequatur debitis
+                animi perspiciatis autem eveniet asperiores vitae nihil similique alias. Autem animi modi ab et.
             </div>
         </div>
     )
@@ -21,5 +23,10 @@ export default function CareerDetails() {
 export const careerDetailsLoader = async ({ params }) => {
     const { id } = params;  
     const response = await fetch('http://localhost:4000/careers/' + id);
+
+    if (!response.ok) {
+        throw Error('Whoops! this career does not exist ☠️');
+    }
+
     return response.json();
 }

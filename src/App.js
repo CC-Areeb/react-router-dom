@@ -20,6 +20,7 @@ import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 import Careers, { careersLoader } from "./components/Careers";
 import CareerDetails, { careerDetailsLoader } from "./components/CareerDetails";
+import CareersError from "./components/CareersError";
 
 function App() {
 
@@ -41,8 +42,14 @@ function App() {
 
         {/* Careers layout */}
         {/* The loader will run that function ahead of time */}
-        <Route path="careers" element={<CareersLayout />}>
-          <Route index element={<Careers />} loader={careersLoader}></Route>
+        <Route path="careers" element={<CareersLayout />} errorElement={<CareersError />}>
+          <Route
+            index
+            element={<Careers />}
+            loader={careersLoader}
+          >
+
+          </Route>
 
           {/* Route parameters */}
           <Route
