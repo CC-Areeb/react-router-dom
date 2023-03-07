@@ -10,12 +10,16 @@ import './App.css';
 // layouts
 import RootLayout from "./layouts/RootLayout";
 import HelpLayout from "./layouts/HelpLayout";
+import CareersLayout from "./layouts/CareersLayout";
 
 // Components
 import Home from "./components/Home";
 import About from "./components/About";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
+import Careers, { careersLoader } from "./components/Careers";
+import CareerDetails, { careerDetailsLoader } from "./components/CareerDetails";
 
 function App() {
 
@@ -26,10 +30,27 @@ function App() {
         <Route index element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
 
-        {/* Nesting routes */}
+        {/* Nesting routes - Help layout */}
         <Route path="help" element={<HelpLayout />}>
           <Route path="faq" element={<FAQ />}></Route>
           <Route path="contact" element={<Contact />}></Route>
+        </Route>
+
+        {/* Custom 404 page - temporary */}
+        <Route path="*" element={<NotFound />}></Route>
+
+        {/* Careers layout */}
+        {/* The loader will run that function ahead of time */}
+        <Route path="careers" element={<CareersLayout />}>
+          <Route index element={<Careers />} loader={careersLoader}></Route>
+
+          {/* Route parameters */}
+          <Route
+            path=":id"
+            element={<CareerDetails />}
+            loader={careerDetailsLoader}
+          />
+
         </Route>
       </Route>
     )

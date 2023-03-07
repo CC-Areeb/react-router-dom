@@ -14,8 +14,29 @@ body {
     border-radius: 2rem;
 }
 
-#side_links > a.active,
-.main_links > a.active {
+#side_links>a.active,
+.main_links>a.active {
     background: #ff6666;
     color: white;
+}
+
+.home_page {
+    color: white;
+}
+
+.home_page:hover {
+    color: #ff6666;
+}
+
+.jobs {
+    color: white;
+}
+
+#job_card {
+    margin: 0px 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.main_job_box>a:hover {
+    color: bisque;
 }

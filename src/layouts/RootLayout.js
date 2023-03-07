@@ -15,6 +15,7 @@ export default function RootLayout() {
                                 <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='/'>Home</NavLink>
                                 <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='about'>About</NavLink>
                                 <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='help'>Help</NavLink>
+                                <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='careers'>Careers</NavLink>
                             </div>
                         </div>
                     </div>
