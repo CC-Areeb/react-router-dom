@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 export default function RootLayout() {
     return (
@@ -12,16 +13,16 @@ export default function RootLayout() {
                     <div className="container my-4">
                         <div className="row">
                             <div className="col d-flex flex-row-reverse main_links">
-                                <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='/'>Home</NavLink>
-                                <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='about'>About</NavLink>
-                                <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='help'>Help</NavLink>
                                 <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='careers'>Careers</NavLink>
+                                <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='help'>Help</NavLink>
+                                <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='about'>About</NavLink>
+                                <NavLink className='text-decoration-none mx-2 p-2 text-white rounded-3 fs-5' to='/'>Home</NavLink>
                             </div>
                         </div>
                     </div>
                 </nav>
+                <Breadcrumbs />
             </header>
-
             <main>
                 <Outlet></Outlet>
             </main>

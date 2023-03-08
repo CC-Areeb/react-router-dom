@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import img1 from '../images/job4.png';
 import img2 from '../images/job5.png';
 import img3 from '../images/job6.jpg';
 
 export default function About() {
+    const [user, setUser] = useState('mario');
+
+    function handleLogout() {
+        setUser(null);
+    }
+
+    if(!user) {
+        return <Navigate to='/' replace={true}></Navigate>
+    }
+
     return (
         <>
             <div className="container">
@@ -26,10 +37,11 @@ export default function About() {
                         </div>
 
                         <div className="col-12 text-center">
-                            <img className='img-fluid job_img m-4' src={img1} alt="" srcset="" />
-                            <img className='img-fluid job_img m-4' src={img2} alt="" srcset="" />
-                            <img className='img-fluid job_img m-4' src={img3} alt="" srcset="" />
+                            <img className='img-fluid job_img m-4' src={img1} alt="" />
+                            <img className='img-fluid job_img m-4' src={img2} alt="" />
+                            <img className='img-fluid job_img m-4' src={img3} alt="" />
                         </div>
+                        <button onClick={handleLogout} className='my-4 btn btn-danger btn-lg'>Logout</button>
                     </div>
                 </div>
             </div>

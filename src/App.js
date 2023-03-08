@@ -13,14 +13,14 @@ import HelpLayout from "./layouts/HelpLayout";
 import CareersLayout from "./layouts/CareersLayout";
 
 // Components
-import Home from "./components/Home";
-import About from "./components/About";
-import FAQ from "./components/FAQ";
-import Contact from "./components/Contact";
-import NotFound from "./components/NotFound";
-import Careers, { careersLoader } from "./components/Careers";
-import CareerDetails, { careerDetailsLoader } from "./components/CareerDetails";
-import CareersError from "./components/CareersError";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import FAQ from "./pages/FAQ";
+import Contact, { contactAction } from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+import Careers, { careersLoader } from "./pages/Careers";
+import CareerDetails, { careerDetailsLoader } from "./pages/CareerDetails";
+import CareersError from "./pages/CareersError";
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
         {/* Nesting routes - Help layout */}
         <Route path="help" element={<HelpLayout />}>
           <Route path="faq" element={<FAQ />}></Route>
-          <Route path="contact" element={<Contact />}></Route>
+          <Route path="contact" element={<Contact />} action={contactAction}></Route>
         </Route>
 
         {/* Custom 404 page - temporary */}

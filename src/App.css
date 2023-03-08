@@ -59,3 +59,18 @@ body {
     text-decoration: none;
     color: bisque;
 }
+
+
+.breadcrumbs .crumb:after {
+    color: whitesmoke;
+    margin: 0px 0px 0px 20px;
+    content: '>';
+}
+
+.breadcrumbs .crumb:last-child::after {
+    display: none;
+}
+
+.breadcrumbs > *{
+    display: inline-block;
+}

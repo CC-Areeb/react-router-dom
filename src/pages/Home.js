@@ -27,9 +27,9 @@ export default function Home() {
                     </div>
 
                     <div className="col-12 text-center">
-                        <img className='img-fluid job_img m-4' src={img1} alt="" srcset="" />
-                        <img className='img-fluid job_img m-4' src={img2} alt="" srcset="" />
-                        <img className='img-fluid job_img m-4' src={img3} alt="" srcset="" />
+                        <img className='img-fluid job_img m-4' src={img1} alt="" />
+                        <img className='img-fluid job_img m-4' src={img2} alt="" />
+                        <img className='img-fluid job_img m-4' src={img3} alt="" />
                     </div>
                 </div>
             </div>
